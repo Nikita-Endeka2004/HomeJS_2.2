@@ -1,9 +1,7 @@
 
-
-let array = 145;
-
 let grn = {
 
+    0: "гривень",
     1: "гивня",
     2: "гривні",
     3: "гривні",
@@ -16,6 +14,92 @@ let grn = {
 
 }
 
-let a = array % 100;
+let ForUnit = {
 
-console.log(a);
+    1: "",
+    2: "Дві",
+    3: "Триста",
+    4: "Чотириста",
+    5: "П'ятсот",
+    6: "Шістсот",
+    7: "Сімсот",
+    8: "Вісімсот",
+    9: "Дев'ятсот"
+
+}
+
+let ForHundreds = {
+
+    1: "Сто",
+    2: "Двісті",
+    3: "Триста",
+    4: "Чотириста",
+    5: "П'ятсот",
+    6: "Шістсот",
+    7: "Сімсот",
+    8: "Вісімсот",
+    9: "Дев'ятсот"
+
+}
+
+let ForNoun = {
+
+    0: "",
+    2: "Двадцять",
+    3: "Тридцять",
+    4: "Сорок",
+    5: "П'ятдесят",
+    6: "Шістдесят",
+    7: "Сімдесят",
+    8: "Вісімдесят",
+    9: "Дев'яносто"
+
+}
+
+let ForTen = {
+
+
+
+}
+
+let number = '122';
+
+let varible;
+
+let str = number.split('');
+
+if((number % 100) > 0){
+
+    varible = ForHundreds[str[0]];
+
+    number = number % 100;
+
+    console.log(number);
+
+    if((number % 10) !== 1){
+
+        varible = varible + " " + ForNoun[str[1]];
+
+        number = number % 10;
+
+        if(number > 0){
+
+            varible = varible + " " + ForUnit[str[2]];
+
+            varible = varible + " " + grn[str[2]];
+
+            console.log(varible);
+
+        }
+
+    }
+
+
+
+}
+
+// number = number % 100;
+
+// number = number % 10;
+
+// console.log(number);
