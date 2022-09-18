@@ -78,7 +78,7 @@ function WordTranslat(){
 
     let number = numberInput.value;
 
-    if(number > 999){
+    if((number > 999) || (number < 1)){
 
         indexInput.innerHTML = `Ввведіть число яке попадає у 1 <= N <= 999, а не ${number}...`;
 
