@@ -18,13 +18,13 @@ let ForUnit = {
 
     1: "",
     2: "Дві",
-    3: "Триста",
-    4: "Чотириста",
-    5: "П'ятсот",
-    6: "Шістсот",
-    7: "Сімсот",
-    8: "Вісімсот",
-    9: "Дев'ятсот"
+    3: "Три",
+    4: "Чотири",
+    5: "П'ять",
+    6: "Шість",
+    7: "Сім",
+    8: "Вісім",
+    9: "Дев'ять"
 
 }
 
@@ -62,13 +62,13 @@ let ForTen = {
 
 }
 
-let number = '122';
+let number = '190';
 
 let varible;
 
 let str = number.split('');
 
-if((number % 100) > 0){
+if((number % 100) > 9){
 
     varible = ForHundreds[str[0]];
 
@@ -76,7 +76,7 @@ if((number % 100) > 0){
 
     console.log(number);
 
-    if((number % 10) !== 1){
+    if((number % 10) == 0){
 
         varible = varible + " " + ForNoun[str[1]];
 
@@ -94,7 +94,20 @@ if((number % 100) > 0){
 
     }
 
+}
 
+// if((number % 100)){
+
+
+// }
+
+if(number == 100){
+
+    varible = ForHundreds[str[0]];
+
+    varible = varible + " " + grn[str[2]];
+
+    console.log(varible);
 
 }
 
