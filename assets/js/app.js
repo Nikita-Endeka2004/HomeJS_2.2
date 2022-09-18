@@ -77,77 +77,88 @@ let varible;
 function WordTranslat(){
 
     let number = numberInput.value;
+
+    if(number > 999){
+
+        indexInput.innerHTML = `Ввведіть число яке попадає у 1 <= N <= 999, а не ${number}...`;
+
+    }
+
+    else{
+
+        let str = number.split('');
     
-    let str = number.split('');
+        str = str.reverse();
     
-    str = str.reverse();
+        if(str[2]){ //if have hundreds
     
-    if(str[2]){ //if have hundreds
-    
-        varible = ForHundreds[str[2]];
-    
-        if(str[1] == 0){  //if second numder = 0
-    
-            varible = varible + " " + ForUnit[str[0]] + " " + grn[str[0]];
-    
-        }
-    
-        if(str[1] == 1){ //if second number = 0
-    
-            let value = str[1] + str[0];
-    
-            varible = varible + " " + ForTen[value] + " гривень" ;
-    
-        }
-    
-        if((str[1] != 1) && (str[1] != 0)){ //else
-    
-            if(str[0] == 0){
-    
-                varible = varible + " " + ForNoun[str[1]] + " гривень";
-    
-            }else{
-    
-                varible = varible + " " + ForNoun[str[1]] + " " + ForUnit[str[0]] + " " + grn[str[0]];
-    
+            varible = ForHundreds[str[2]];
+        
+            if(str[1] == 0){  //if second numder = 0
+        
+                varible = varible + " " + ForUnit[str[0]] + " " + grn[str[0]];
+        
             }
-    
-        }
-    
-    }
-    
-    if(str[2] == undefined){
-    
-        if(str[1] == 1){ 
-    
-            let value = str[1] + str[0];
-    
-            varible = ForTen[value] + " гривень" ;
-    
-        }
-    
-        else{ 
-    
-            if(str[0] == 0){
-    
-                varible = ForNoun[str[1]] + " гривень";
-    
-            }else{
-    
-                varible = ForNoun[str[1]] + " " + ForUnit[str[0]] + " " + grn[str[0]];
-    
+        
+            if(str[1] == 1){ //if second number = 0
+        
+                let value = str[1] + str[0];
+        
+                varible = varible + " " + ForTen[value] + " гривень" ;
+        
             }
-    
+        
+            if((str[1] != 1) && (str[1] != 0)){ //else
+        
+                if(str[0] == 0){
+        
+                    varible = varible + " " + ForNoun[str[1]] + " гривень";
+        
+                }else{
+        
+                    varible = varible + " " + ForNoun[str[1]] + " " + ForUnit[str[0]] + " " + grn[str[0]];
+        
+                }
+        
+            }
+        
         }
-    
+        
+        if(str[2] == undefined){
+        
+            if(str[1] == 1){ 
+        
+                let value = str[1] + str[0];
+        
+                varible = ForTen[value] + " гривень" ;
+        
+            }
+        
+            else{ 
+        
+                if(str[0] == 0){
+        
+                    varible = ForNoun[str[1]] + " гривень";
+        
+                }else{
+        
+                    varible = ForNoun[str[1]] + " " + ForUnit[str[0]] + " " + grn[str[0]];
+        
+                }
+        
+            }
+        
+        }
+        
+        if(str[1] == undefined){
+        
+            varible = ForUnit[str[0]] + " " + grn[str[0]];
+        
+        }
+        
+        indexInput.innerHTML = `${varible}`;
+
     }
-    
-    if(str[1] == undefined){
-    
-        varible = ForUnit[str[0]] + " " + grn[str[0]];
-    
-    }
-    
-    indexInput.innerHTML = `${varible}`;
+
 
 }
