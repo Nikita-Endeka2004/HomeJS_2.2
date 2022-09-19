@@ -93,10 +93,21 @@ function WordTranslat(){
         if(str[2]){ //if have hundreds
     
             varible = ForHundreds[str[2]];
+
+            if((str[1] == 0) && (str[0] == 0)){
+
+                varible = varible + " " + grn[str[0]];
+
+                console.log('dfgdfg');
+
+            }
         
-            if(str[1] == 0){  //if second numder = 0
         
+            if((str[1] == 0) && (str[0] != 0)){  //if second numder = 0
+
                 varible = varible + " " + ForUnit[str[0]] + " " + grn[str[0]];
+
+                console.log('2331');
         
             }
         
