@@ -92,7 +92,7 @@ function WordTranslat(){
     
         if(str[2]){ //if have hundreds
     
-            varible = ForHundreds[str[2]];
+            varible = ForHundreds[str[2]]; //if only hundreds
 
             if((str[1] == 0) && (str[0] == 0)){
 
